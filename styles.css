@@ -22,6 +22,7 @@ body {
   color: var(--text);
   background: var(--white);
   line-height: 1.75;
+  overflow-x: hidden;
 }
 
 img {
@@ -89,8 +90,9 @@ a {
 }
 
 .whatsapp-float::before {
-  content: "☎";
-  font-size: 1.25rem;
+  content: "WA";
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
 @media (max-width: 720px) {
@@ -111,9 +113,11 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.85rem;
+  min-width: 0;
 }
 
 .logo {
+  flex: 0 0 auto;
   width: 48px;
   height: auto;
   border-radius: 12px;
@@ -746,34 +750,156 @@ a {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .header-inner {
     flex-wrap: wrap;
+    padding: 0.75rem 0;
+    gap: 0.75rem;
   }
 
-@media (min-width: 900px) {
+  .brand-with-logo span {
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .logo {
+    width: 42px;
+    border-radius: 10px;
+  }
+
+  .container {
+    width: min(100% - 1.2rem, 1140px);
+  }
+
+  .hero {
+    padding: 2.25rem 0 2rem;
+  }
+
+  .hero-grid {
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: 2.15rem;
+    line-height: 1.08;
+  }
+
+  .hero-copy {
+    margin-bottom: 0;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    gap: 0.75rem;
+    margin-top: 1.4rem;
+  }
+
   .hero-visual {
-    flex-direction: row-reverse;
-    align-items: flex-end;
-    justify-content: flex-end;
-    gap: 1.25rem;
+    align-items: stretch;
   }
 
   .hero-image-card {
-    flex: 0 0 480px;
+    border-radius: 18px;
   }
 
-  .hero-image-text {
-    text-align: left;
-    max-width: 520px;
-    margin: 0;
-    align-self: flex-start;
+  .hero-image-card img {
+    width: 100%;
+    height: 260px;
+    max-height: none;
   }
-  /* keep the paragraph from extending past the image height */
-  .hero-image-text {
-    max-height: 420px;
-    overflow: hidden;
+
+  .hero-image-chip {
+    left: 0.75rem;
+    bottom: 0.75rem;
+    max-width: calc(100% - 1.5rem);
+    padding: 0.55rem 0.75rem;
+    font-size: 0.8rem;
+    white-space: normal;
   }
-}
+
+  .hero-visual {
+    width: 100%;
+  }
+
+  .page-header {
+    gap: 0.55rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .page-header h2,
+  .section-header h2 {
+    font-size: 1.8rem;
+    line-height: 1.14;
+    letter-spacing: 0;
+  }
+
+  .section-light,
+  .section-primary {
+    padding: 2.25rem 0;
+  }
+
+  .cards-grid,
+  .timeline-grid {
+    gap: 1rem;
+  }
+
+  .section-card,
+  .timeline-step,
+  .contact-card,
+  .product-card,
+  .quality-list div,
+  .stat-card {
+    border-radius: 16px;
+    padding: 1.15rem;
+  }
+
+  .card-img {
+    height: 175px;
+    border-radius: 14px;
+    margin-bottom: 0.9rem;
+  }
+
+  .about-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .about-panel img {
+    min-height: 240px;
+    border-radius: 16px;
+  }
+
+  .contact-panel {
+    padding: 0;
+  }
+
+  .map-frame {
+    border-radius: 16px;
+  }
+
+  .map-frame iframe {
+    height: 300px;
+  }
+
+  .footer-grid {
+    gap: 1.25rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .footer-note {
+    padding-inline: 0.6rem;
+  }
+
+  .whatsapp-float {
+    right: 0.85rem;
+    bottom: 0.85rem;
+    width: 3.4rem;
+    height: 3.4rem;
+  }
 
   .nav-toggle {
     display: flex;
@@ -782,17 +908,19 @@ a {
   .site-nav {
     position: absolute;
     top: 100%;
-    right: 1rem;
-    left: 1rem;
+    right: 0.6rem;
+    left: 0.6rem;
     background: var(--white);
     flex-direction: column;
-    padding: 1rem;
-    border-radius: 18px;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.6rem 1rem;
+    border-radius: 16px;
     box-shadow: var(--shadow);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-1rem);
-    transition: all 0.25s ease;
+    transform: translateY(-0.75rem);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
   }
 
   .site-nav.open {
@@ -810,10 +938,6 @@ a {
     border-bottom: none;
   }
 
-  .hero h1 {
-    font-size: 2.4rem;
-  }
-
   .btn {
     width: 100%;
   }
@@ -821,5 +945,31 @@ a {
   .footer-inner {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (min-width: 901px) {
+  .hero-visual {
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 1.25rem;
+  }
+
+  .hero-image-card {
+    flex: 0 0 480px;
+  }
+
+  .hero-image-text {
+    text-align: left;
+    max-width: 520px;
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  /* keep the paragraph from extending past the image height */
+  .hero-image-text {
+    max-height: 420px;
+    overflow: hidden;
   }
 }
