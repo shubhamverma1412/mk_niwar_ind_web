@@ -760,10 +760,18 @@ a {
   }
 
   .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) !important;
     grid-template-areas:
       "text"
       "image"
       "stats";
+  }
+
+  .about-grid > div:first-child,
+  .about-panel,
+  .about-stats-row {
+    grid-column: 1 / -1 !important;
   }
 }
 
@@ -869,7 +877,7 @@ a {
   }
 
   .about-grid {
-    gap: 1.15rem;
+    gap: 1rem;
   }
 
   .about-grid > div:first-child p {
@@ -908,7 +916,11 @@ a {
   }
 
   .about-panel img {
-    min-height: 240px;
+    width: 100%;
+    height: 220px;
+    max-height: 260px;
+    min-height: 0;
+    object-fit: cover;
     border-radius: 16px;
   }
 
