@@ -14,7 +14,7 @@
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="brand brand-with-logo">
-          <img src="logo.png" alt="Mukesh Niwar Industries logo" class="logo" />
+          <img src="logo.png" alt="Mukesh Niwar Industries logo" class="logo" loading="eager" decoding="async" />
           <span>Mukesh Niwar Industries</span>
         </a>
         <button class="nav-toggle" aria-label="Open navigation">
@@ -47,7 +47,11 @@
 
           <div class="hero-visual">
             <div class="hero-image-card">
-              <img src="curreent_traditonal_ind.png" alt="Traditional manufacturing" />
+              <picture>
+                <source type="image/webp" srcset="curreent_traditonal_ind.webp" />
+                <source type="image/png" srcset="curreent_traditonal_ind.png" />
+                <img src="curreent_traditonal_ind.png" alt="Traditional manufacturing" loading="eager" decoding="async" />
+              </picture>
               <span class="hero-image-chip">Mathura manufacturing</span>
             </div>
             <!-- hero descriptive paragraph removed per request -->
@@ -67,17 +71,17 @@
 
           <div class="cards-grid">
             <article class="section-card">
-              <img src="ind_pic1.webp" alt="Manufacturing facility" class="card-img" />
+              <img src="ind_pic1.webp" alt="Manufacturing facility" class="card-img" loading="lazy" decoding="async" />
               <h3>National Reach</h3>
               <p>Serving customers from every corner of India with dependable logistics and order support.</p>
             </article>
             <article class="section-card">
-              <img src="ind_pic2.webp" alt="Production process" class="card-img" />
+              <img src="ind_pic2.webp" alt="Production process" class="card-img" loading="lazy" decoding="async" />
               <h3>Custom Production</h3>
               <p>Tailor-made widths, colors, strengths and packaging for your exact specifications.</p>
             </article>
             <article class="section-card">
-              <img src="outputproduct1.webp" alt="Product quality" class="card-img" />
+              <img src="outputproduct1.webp" alt="Product quality" class="card-img" loading="lazy" decoding="async" />
               <h3>Trusted Performance</h3>
               <p>Products designed for industrial use in bags, furniture, safety gear and construction.</p>
             </article>
@@ -111,22 +115,22 @@
           </div>
           <div class="cards-grid">
             <article class="section-card">
-              <img src="outputproduct1.webp" alt="Niwar range products" class="card-img" />
+              <img src="outputproduct1.webp" alt="Niwar range products" class="card-img" loading="lazy" decoding="async" />
               <h3>Niwar Range</h3>
               <p><strong>Key Products:</strong> Red Namo Niwar, Cotton Niwar (1" to 4"), Multi-color Niwar.</p>
             </article>
             <article class="section-card">
-              <img src="rope1.webp" alt="Ropes and coils" class="card-img" />
+              <img src="rope1.webp" alt="Ropes and coils" class="card-img" loading="lazy" decoding="async" />
               <h3>Ropes & Coils</h3>
               <p><strong>Key Products:</strong> Cotton Rope, Braided Ropes, Industrial Coils.</p>
             </article>
             <article class="section-card">
-              <img src="yarn1.webp" alt="Woven tapes" class="card-img" />
+              <img src="yarn1.webp" alt="Woven tapes" class="card-img" loading="lazy" decoding="async" />
               <h3>Woven Tapes</h3>
               <p><strong>Key Products:</strong> Curtain Tapes, Reflective Tapes, Garment Tapes.</p>
             </article>
             <article class="section-card">
-              <img src="yarn2.webp" alt="Yarn products" class="card-img" />
+              <img src="yarn2.webp" alt="Yarn products" class="card-img" loading="lazy" decoding="async" />
               <h3>Yarn</h3>
               <p><strong>Key Products:</strong> Blended Open End Yarn, Cotton Yarn.</p>
             </article>
